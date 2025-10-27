@@ -1,11 +1,12 @@
 {
   "name": "expres-mysql-webgame",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "ts-node-dev index.ts"
+    "start": "ts-node dist/server.js",
+    "dev": "ts-node-dev src/server.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
