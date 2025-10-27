@@ -1,45 +1,34 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
-
     // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    "types": ["node"],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    "module": "commonjs",  // ใช้ commonjs สำหรับ Node.js
+    "target": "esnext",    // ใช้ ESNext เพื่อรองรับคุณสมบัติของ JavaScript ล่าสุด
+    "types": ["node"],     // ใช้ประเภทของ Node.js
+    "lib": ["esnext"],     // รวมไฟล์ไลบรารีของ ESNext
 
     // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    "sourceMap": true,     // สร้างไฟล์ .map สำหรับ debugging
+    "declaration": true,   // สร้างไฟล์ .d.ts สำหรับ type declarations
+    "declarationMap": true, // สร้างไฟล์ .d.ts.map สำหรับการ mapping
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
+    // Style Options (สามารถเปิดหรือปิดตามต้องการ)
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
 
     // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": false,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
-    "outDir": "./dist"
-  }
+    "strict": true,         // เปิดใช้งาน strict mode เพื่อการตรวจสอบที่เข้มงวด
+    "isolatedModules": true, // เปิดใช้งาน isolatedModules สำหรับการใช้ในระบบโมดูลของ TypeScript
+    "skipLibCheck": true,   // ข้ามการตรวจสอบไลบรารีภายนอก
+    "outDir": "./dist"      // กำหนดตำแหน่งที่ไฟล์ที่คอมไพล์จะถูกเก็บไว้
+  },
+  "include": ["src/**/*.ts"],   // รวมไฟล์ .ts ที่อยู่ในโฟลเดอร์ src
+  "exclude": ["node_modules"]   // ข้ามโฟลเดอร์ node_modules
 }
+
